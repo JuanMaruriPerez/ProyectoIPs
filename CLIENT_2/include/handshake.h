@@ -57,10 +57,6 @@ typedef struct {
 // Información adicional firmada por el servidor
 typedef struct {
     uint8_t certificate[MAX_CERT_SIZE];  // Certificado X.509 u otro
-    uint32_t cert_len;
-
-    uint8_t signature[MAX_KEY_SIZE];     // Firma del servidor sobre el transcript
-    uint32_t sig_len;
 } server_certificate_t;
 
 // ------------------------
