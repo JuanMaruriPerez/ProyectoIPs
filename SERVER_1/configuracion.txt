@@ -1,0 +1,3 @@
+/usr/local/src/oqs-provider/_build/lib/oqsprovider.so
+/usr/local/openssl-3.5/lib64/ossl-modules/oqsprovider.so
+/usr/local/src/oqs-provider/openssl-oqs.cnf

@@ -1,0 +1,452 @@
+2025-06-04 17:27:32 us=65593 Note: Kernel support for ovpn-dco missing, disabling data channel offload.
+2025-06-04 17:27:32 us=65648 Current Parameter Settings:
+2025-06-04 17:27:32 us=65655   config = 'client.ovpn'
+2025-06-04 17:27:32 us=65660   mode = 0
+2025-06-04 17:27:32 us=65665   persist_config = DISABLED
+2025-06-04 17:27:32 us=65669   persist_mode = 1
+2025-06-04 17:27:32 us=65674   show_ciphers = DISABLED
+2025-06-04 17:27:32 us=65678   show_digests = DISABLED
+2025-06-04 17:27:32 us=65683   show_engines = DISABLED
+2025-06-04 17:27:32 us=65687   genkey = DISABLED
+2025-06-04 17:27:32 us=65692   genkey_filename = '[UNDEF]'
+2025-06-04 17:27:32 us=65696   key_pass_file = '[UNDEF]'
+2025-06-04 17:27:32 us=65701   show_tls_ciphers = DISABLED
+2025-06-04 17:27:32 us=65705   connect_retry_max = 0
+2025-06-04 17:27:32 us=65710 Connection profiles [0]:
+2025-06-04 17:27:32 us=65714   proto = udp
+2025-06-04 17:27:32 us=65719   Local Sockets:
+2025-06-04 17:27:32 us=65724     [(null)]:1194-udp
+2025-06-04 17:27:32 us=65728   remote = '172.233.108.45'
+2025-06-04 17:27:32 us=65733   remote_port = '1194'
+2025-06-04 17:27:32 us=65737   remote_float = DISABLED
+2025-06-04 17:27:32 us=65742   bind_defined = DISABLED
+2025-06-04 17:27:32 us=65746   bind_local = DISABLED
+2025-06-04 17:27:32 us=65750   bind_ipv6_only = DISABLED
+2025-06-04 17:27:32 us=65755   connect_retry_seconds = 1
+2025-06-04 17:27:32 us=65760   connect_timeout = 120
+2025-06-04 17:27:32 us=65764   socks_proxy_server = '[UNDEF]'
+2025-06-04 17:27:32 us=65769   socks_proxy_port = '[UNDEF]'
+2025-06-04 17:27:32 us=65773   tun_mtu = 1500
+2025-06-04 17:27:32 us=65778   tun_mtu_defined = ENABLED
+2025-06-04 17:27:32 us=65782   link_mtu = 1500
+2025-06-04 17:27:32 us=65787   link_mtu_defined = DISABLED
+2025-06-04 17:27:32 us=65791   tun_mtu_extra = 0
+2025-06-04 17:27:32 us=65796   tun_mtu_extra_defined = DISABLED
+2025-06-04 17:27:32 us=65800   tls_mtu = 1250
+2025-06-04 17:27:32 us=65805   mtu_discover_type = -1
+2025-06-04 17:27:32 us=65829   fragment = 0
+2025-06-04 17:27:32 us=65834   mssfix = 1492
+2025-06-04 17:27:32 us=65839   mssfix_encap = ENABLED
+2025-06-04 17:27:32 us=65843   mssfix_fixed = DISABLED
+2025-06-04 17:27:32 us=65848   explicit_exit_notification = 0
+2025-06-04 17:27:32 us=65852   tls_auth_file = '[UNDEF]'
+2025-06-04 17:27:32 us=65857   key_direction = not set
+2025-06-04 17:27:32 us=65862   tls_crypt_file = '[UNDEF]'
+2025-06-04 17:27:32 us=65866   tls_crypt_v2_file = '[UNDEF]'
+2025-06-04 17:27:32 us=65871 Connection profiles END
+2025-06-04 17:27:32 us=65875   remote_random = DISABLED
+2025-06-04 17:27:32 us=65880   ipchange = '[UNDEF]'
+2025-06-04 17:27:32 us=65884   dev = 'tun'
+2025-06-04 17:27:32 us=65889   dev_type = '[UNDEF]'
+2025-06-04 17:27:32 us=65893   dev_node = '[UNDEF]'
+2025-06-04 17:27:32 us=65898   disable_dco = ENABLED
+2025-06-04 17:27:32 us=65902   lladdr = '[UNDEF]'
+2025-06-04 17:27:32 us=65907   topology = 1
+2025-06-04 17:27:32 us=65911   ifconfig_local = '[UNDEF]'
+2025-06-04 17:27:32 us=65916   ifconfig_remote_netmask = '[UNDEF]'
+2025-06-04 17:27:32 us=65920   ifconfig_noexec = DISABLED
+2025-06-04 17:27:32 us=65925   ifconfig_nowarn = DISABLED
+2025-06-04 17:27:32 us=65929   ifconfig_ipv6_local = '[UNDEF]'
+2025-06-04 17:27:32 us=65934   ifconfig_ipv6_netbits = 0
+2025-06-04 17:27:32 us=65938   ifconfig_ipv6_remote = '[UNDEF]'
+2025-06-04 17:27:32 us=65943   shaper = 0
+2025-06-04 17:27:32 us=65947   mtu_test = 0
+2025-06-04 17:27:32 us=65952   mlock = DISABLED
+2025-06-04 17:27:32 us=65957   keepalive_ping = 0
+2025-06-04 17:27:32 us=65962   keepalive_timeout = 0
+2025-06-04 17:27:32 us=65966   inactivity_timeout = 0
+2025-06-04 17:27:32 us=65971   session_timeout = 0
+2025-06-04 17:27:32 us=65975   inactivity_minimum_bytes = 0
+2025-06-04 17:27:32 us=65980   ping_send_timeout = 0
+2025-06-04 17:27:32 us=65985   ping_rec_timeout = 0
+2025-06-04 17:27:32 us=65989   ping_rec_timeout_action = 0
+2025-06-04 17:27:32 us=65994   ping_timer_remote = DISABLED
+2025-06-04 17:27:32 us=65998   remap_sigusr1 = 0
+2025-06-04 17:27:32 us=66003   persist_tun = DISABLED
+2025-06-04 17:27:32 us=66007   persist_local_ip = DISABLED
+2025-06-04 17:27:32 us=66018   persist_remote_ip = DISABLED
+2025-06-04 17:27:32 us=66023   passtos = DISABLED
+2025-06-04 17:27:32 us=66027   resolve_retry_seconds = 30
+2025-06-04 17:27:32 us=66032   resolve_in_advance = DISABLED
+2025-06-04 17:27:32 us=66036   username = '[UNDEF]'
+2025-06-04 17:27:32 us=66041   groupname = '[UNDEF]'
+2025-06-04 17:27:32 us=66046   chroot_dir = '[UNDEF]'
+2025-06-04 17:27:32 us=66050   cd_dir = '[UNDEF]'
+2025-06-04 17:27:32 us=66055   writepid = '[UNDEF]'
+2025-06-04 17:27:32 us=66059   up_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66064   down_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66068   down_pre = DISABLED
+2025-06-04 17:27:32 us=66073   up_restart = DISABLED
+2025-06-04 17:27:32 us=66077   up_delay = DISABLED
+2025-06-04 17:27:32 us=66082   daemon = DISABLED
+2025-06-04 17:27:32 us=66086   log = ENABLED
+2025-06-04 17:27:32 us=66091   suppress_timestamps = DISABLED
+2025-06-04 17:27:32 us=66096   machine_readable_output = DISABLED
+2025-06-04 17:27:32 us=66100   nice = 0
+2025-06-04 17:27:32 us=66105   verbosity = 5
+2025-06-04 17:27:32 us=66109   mute = 0
+2025-06-04 17:27:32 us=66114   gremlin = 0
+2025-06-04 17:27:32 us=66118   status_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66123   status_file_version = 1
+2025-06-04 17:27:32 us=66128   status_file_update_freq = 60
+2025-06-04 17:27:32 us=66132   occ = ENABLED
+2025-06-04 17:27:32 us=66137   rcvbuf = 0
+2025-06-04 17:27:32 us=66141   sndbuf = 0
+2025-06-04 17:27:32 us=66146   mark = 0
+2025-06-04 17:27:32 us=66150   sockflags = 0
+2025-06-04 17:27:32 us=66155   fast_io = DISABLED
+2025-06-04 17:27:32 us=66160   comp.alg = 0
+2025-06-04 17:27:32 us=66164   comp.flags = 24
+2025-06-04 17:27:32 us=66170   route_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66174   route_default_gateway = '[UNDEF]'
+2025-06-04 17:27:32 us=66179   route_default_metric = 0
+2025-06-04 17:27:32 us=66183   route_noexec = DISABLED
+2025-06-04 17:27:32 us=66188   route_delay = 0
+2025-06-04 17:27:32 us=66193   route_delay_window = 30
+2025-06-04 17:27:32 us=66197   route_delay_defined = DISABLED
+2025-06-04 17:27:32 us=66202   route_nopull = DISABLED
+2025-06-04 17:27:32 us=66207   route_gateway_via_dhcp = DISABLED
+2025-06-04 17:27:32 us=66211   allow_pull_fqdn = DISABLED
+2025-06-04 17:27:32 us=66216   management_addr = '[UNDEF]'
+2025-06-04 17:27:32 us=66221   management_port = '[UNDEF]'
+2025-06-04 17:27:32 us=66225   management_user_pass = '[UNDEF]'
+2025-06-04 17:27:32 us=66230   management_log_history_cache = 250
+2025-06-04 17:27:32 us=66235   management_echo_buffer_size = 100
+2025-06-04 17:27:32 us=66239   management_client_user = '[UNDEF]'
+2025-06-04 17:27:32 us=66244   management_client_group = '[UNDEF]'
+2025-06-04 17:27:32 us=66249   management_flags = 0
+2025-06-04 17:27:32 us=66253   shared_secret_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66258   key_direction = not set
+2025-06-04 17:27:32 us=66263   ciphername = 'AES-256-GCM'
+2025-06-04 17:27:32 us=66267   ncp_ciphers = 'AES-256-GCM:AES-128-GCM:CHACHA20-POLY1305'
+2025-06-04 17:27:32 us=66272   authname = 'SHA1'
+2025-06-04 17:27:32 us=66277   engine = DISABLED
+2025-06-04 17:27:32 us=66281   mute_replay_warnings = DISABLED
+2025-06-04 17:27:32 us=66286   replay_window = 64
+2025-06-04 17:27:32 us=66291   replay_time = 15
+2025-06-04 17:27:32 us=66295   packet_id_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66300   test_crypto = DISABLED
+2025-06-04 17:27:32 us=66304   tls_server = DISABLED
+2025-06-04 17:27:32 us=66309   tls_client = ENABLED
+2025-06-04 17:27:32 us=66314   ca_file = '/root/openvpn-ca/ca.cert.pem'
+2025-06-04 17:27:32 us=66318   ca_path = '[UNDEF]'
+2025-06-04 17:27:32 us=66323   dh_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66328   cert_file = '/root/openvpn-ca/client.cert.pem'
+2025-06-04 17:27:32 us=66332   extra_certs_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66337   priv_key_file = '/root/openvpn-ca/client.key.pem'
+2025-06-04 17:27:32 us=66341   pkcs12_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66346   cipher_list = '[UNDEF]'
+2025-06-04 17:27:32 us=66351   cipher_list_tls13 = '[UNDEF]'
+2025-06-04 17:27:32 us=66355   tls_cert_profile = '[UNDEF]'
+2025-06-04 17:27:32 us=66363   tls_verify = '[UNDEF]'
+2025-06-04 17:27:32 us=66368   tls_export_peer_cert_dir = '[UNDEF]'
+2025-06-04 17:27:32 us=66373   verify_x509_type = 0
+2025-06-04 17:27:32 us=66377   verify_x509_name = '[UNDEF]'
+2025-06-04 17:27:32 us=66382   crl_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66387   ns_cert_type = 0
+2025-06-04 17:27:32 us=66391   remote_cert_ku[i] = 65535
+2025-06-04 17:27:32 us=66396   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66400   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66405   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66409   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66414   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66418   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66423   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66427   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66432   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66436   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66441   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66445   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66450   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66455   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66459   remote_cert_ku[i] = 0
+2025-06-04 17:27:32 us=66464   remote_cert_eku = 'TLS Web Server Authentication'
+2025-06-04 17:27:32 us=66468   ssl_flags = 16640
+2025-06-04 17:27:32 us=66473   tls_timeout = 2
+2025-06-04 17:27:32 us=66478   renegotiate_bytes = -1
+2025-06-04 17:27:32 us=66482   renegotiate_packets = 0
+2025-06-04 17:27:32 us=66487   renegotiate_seconds = 3600
+2025-06-04 17:27:32 us=66491   handshake_window = 60
+2025-06-04 17:27:32 us=66496   transition_window = 3600
+2025-06-04 17:27:32 us=66500   single_session = DISABLED
+2025-06-04 17:27:32 us=66505   push_peer_info = DISABLED
+2025-06-04 17:27:32 us=66510   tls_exit = DISABLED
+2025-06-04 17:27:32 us=66514   tls_crypt_v2_metadata = '[UNDEF]'
+2025-06-04 17:27:32 us=66524   server_network = 0.0.0.0
+2025-06-04 17:27:32 us=66529   server_netmask = 0.0.0.0
+2025-06-04 17:27:32 us=66534   server_network_ipv6 = ::
+2025-06-04 17:27:32 us=66539   server_netbits_ipv6 = 0
+2025-06-04 17:27:32 us=66544   server_bridge_ip = 0.0.0.0
+2025-06-04 17:27:32 us=66548   server_bridge_netmask = 0.0.0.0
+2025-06-04 17:27:32 us=66553   server_bridge_pool_start = 0.0.0.0
+2025-06-04 17:27:32 us=66558   server_bridge_pool_end = 0.0.0.0
+2025-06-04 17:27:32 us=66563   ifconfig_pool_defined = DISABLED
+2025-06-04 17:27:32 us=66567   ifconfig_pool_start = 0.0.0.0
+2025-06-04 17:27:32 us=66572   ifconfig_pool_end = 0.0.0.0
+2025-06-04 17:27:32 us=66577   ifconfig_pool_netmask = 0.0.0.0
+2025-06-04 17:27:32 us=66582   ifconfig_pool_persist_filename = '[UNDEF]'
+2025-06-04 17:27:32 us=66587   ifconfig_pool_persist_refresh_freq = 600
+2025-06-04 17:27:32 us=66591   ifconfig_ipv6_pool_defined = DISABLED
+2025-06-04 17:27:32 us=66596   ifconfig_ipv6_pool_base = ::
+2025-06-04 17:27:32 us=66601   ifconfig_ipv6_pool_netbits = 0
+2025-06-04 17:27:32 us=66605   n_bcast_buf = 256
+2025-06-04 17:27:32 us=66610   tcp_queue_limit = 64
+2025-06-04 17:27:32 us=66614   real_hash_size = 256
+2025-06-04 17:27:32 us=66619   virtual_hash_size = 256
+2025-06-04 17:27:32 us=66624   client_connect_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66628   learn_address_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66633   client_disconnect_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66638   client_crresponse_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66642   client_config_dir = '[UNDEF]'
+2025-06-04 17:27:32 us=66647   ccd_exclusive = DISABLED
+2025-06-04 17:27:32 us=66651   tmp_dir = '/tmp'
+2025-06-04 17:27:32 us=66656   push_ifconfig_defined = DISABLED
+2025-06-04 17:27:32 us=66661   push_ifconfig_local = 0.0.0.0
+2025-06-04 17:27:32 us=66666   push_ifconfig_remote_netmask = 0.0.0.0
+2025-06-04 17:27:32 us=66670   push_ifconfig_ipv6_defined = DISABLED
+2025-06-04 17:27:32 us=66675   push_ifconfig_ipv6_local = ::/0
+2025-06-04 17:27:32 us=66680   push_ifconfig_ipv6_remote = ::
+2025-06-04 17:27:32 us=66684   enable_c2c = DISABLED
+2025-06-04 17:27:32 us=66689   duplicate_cn = DISABLED
+2025-06-04 17:27:32 us=66697   cf_max = 0
+2025-06-04 17:27:32 us=66702   cf_per = 0
+2025-06-04 17:27:32 us=66706   cf_initial_max = 100
+2025-06-04 17:27:32 us=66711   cf_initial_per = 10
+2025-06-04 17:27:32 us=66716   max_clients = 1024
+2025-06-04 17:27:32 us=66720   max_routes_per_client = 256
+2025-06-04 17:27:32 us=66725   auth_user_pass_verify_script = '[UNDEF]'
+2025-06-04 17:27:32 us=66729   auth_user_pass_verify_script_via_file = DISABLED
+2025-06-04 17:27:32 us=66734   auth_token_generate = DISABLED
+2025-06-04 17:27:32 us=66738   force_key_material_export = DISABLED
+2025-06-04 17:27:32 us=66743   auth_token_lifetime = 0
+2025-06-04 17:27:32 us=66748   auth_token_secret_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66752   port_share_host = '[UNDEF]'
+2025-06-04 17:27:32 us=66757   port_share_port = '[UNDEF]'
+2025-06-04 17:27:32 us=66761   vlan_tagging = DISABLED
+2025-06-04 17:27:32 us=66766   vlan_accept = all
+2025-06-04 17:27:32 us=66771   vlan_pvid = 1
+2025-06-04 17:27:32 us=66775   client = ENABLED
+2025-06-04 17:27:32 us=66780   pull = ENABLED
+2025-06-04 17:27:32 us=66784   auth_user_pass_file = '[UNDEF]'
+2025-06-04 17:27:32 us=66794 OpenVPN 2.7_alpha1 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [MH/PKTINFO] [AEAD] [DCO]
+2025-06-04 17:27:32 us=66804 library versions: OpenSSL 3.5.0 8 Apr 2025, LZO 2.10
+2025-06-04 17:27:32 us=66830 DCO version: N/A
+2025-06-04 17:27:32 us=86794 Control Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1250 tun_max_mtu:0 headroom:126 payload:1600 tailroom:126 ET:0 ]
+2025-06-04 17:27:32 us=86849 Data Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:27:32 us=86875 TCP/UDP: Preserving recently used remote address: [AF_INET]172.233.108.45:1194
+2025-06-04 17:27:32 us=86892 Socket Buffers: R=[212992->212992] S=[212992->212992]
+2025-06-04 17:27:32 us=86900 UDPv4 link local: (not bound)
+2025-06-04 17:27:32 us=86905 UDPv4 link remote: [AF_INET]172.233.108.45:1194
+WR2025-06-04 17:27:32 us=87490 TLS: Initial packet from [AF_INET]172.233.108.45:1194, sid=f3eb34ba 78ff0787
+WWRRWRWRWR2025-06-04 17:27:32 us=96632 VERIFY OK: depth=1, C=ES, ST=Asturias, L=Oviedo, O=MiCA, CN=MiCA Root
+2025-06-04 17:27:32 us=96913 VERIFY KU OK
+2025-06-04 17:27:32 us=96926 Validating certificate extended key usage
+2025-06-04 17:27:32 us=96931 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+2025-06-04 17:27:32 us=96936 VERIFY EKU OK
+2025-06-04 17:27:32 us=96940 VERIFY OK: depth=0, C=ES, ST=Asturias, L=Oviedo, O=MiEmpresa, CN=servidor.local
+WRWWWWRRRRWR2025-06-04 17:27:32 us=105283 Control Channel: TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384, peer certificate: 4096 bits RSA, signature: RSA-SHA256, peer signing digest/type: rsa_pss_rsae_sha256 RSASSA-PSS, key agreement: X25519MLKEM768
+2025-06-04 17:27:32 us=105298 [servidor.local] Peer Connection Initiated with [AF_INET]172.233.108.45:1194
+2025-06-04 17:27:32 us=105307 TLS: move_session: dest=TM_ACTIVE src=TM_INITIAL reinit_src=1
+2025-06-04 17:27:32 us=105343 TLS: tls_multi_process: initial untrusted session promoted to trusted
+WR2025-06-04 17:27:32 us=106579 PUSH: Received control message: 'PUSH_REPLY,route-gateway 10.8.0.1,topology subnet,ping 10,ping-restart 120,ifconfig 10.8.0.2 255.255.255.0,peer-id 0,cipher AES-256-GCM,protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch,tun-mtu 1500'
+2025-06-04 17:27:32 us=106626 OPTIONS IMPORT: --ifconfig/up options modified
+2025-06-04 17:27:32 us=106634 OPTIONS IMPORT: route-related options modified
+2025-06-04 17:27:32 us=106639 OPTIONS IMPORT: tun-mtu set to 1500
+2025-06-04 17:27:32 us=107012 TUN/TAP device tun0 opened
+2025-06-04 17:27:32 us=107025 tun/tap device [tun0] opened
+2025-06-04 17:27:32 us=107031 do_ifconfig, ipv4=1, ipv6=0
+2025-06-04 17:27:32 us=107052 net_iface_mtu_set: mtu 1500 for tun0
+2025-06-04 17:27:32 us=107094 net_iface_up: set tun0 up
+2025-06-04 17:27:32 us=107806 net_addr_v4_add: 10.8.0.2/24 dev tun0
+2025-06-04 17:27:32 us=107908 Data Channel MTU parms [ mss_fix:1400 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:27:32 us=107944 Outgoing dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:27:32 us=107954 Outgoing dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:27:32 us=107961 Incoming dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:27:32 us=107968 Incoming dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:27:32 us=107996 Outgoing Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108009 Incoming Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108024 Incoming Epoch Data key 2: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108039 Incoming Epoch Data key 3: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108054 Incoming Epoch Data key 4: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108068 Incoming Epoch Data key 5: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108081 Incoming Epoch Data key 6: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108095 Incoming Epoch Data key 7: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108109 Incoming Epoch Data key 8: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108123 Incoming Epoch Data key 9: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108137 Incoming Epoch Data key 10: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108150 Incoming Epoch Data key 11: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108164 Incoming Epoch Data key 12: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108177 Incoming Epoch Data key 13: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108191 Incoming Epoch Data key 14: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108205 Incoming Epoch Data key 15: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108218 Incoming Epoch Data key 16: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108232 Incoming Epoch Data key 17: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:32 us=108239 Initialization Sequence Completed
+2025-06-04 17:27:32 us=108245 Data Channel: cipher 'AES-256-GCM', peer-id: 0
+2025-06-04 17:27:32 us=108250 Timers: ping 10, ping-restart 120
+2025-06-04 17:27:32 us=108255 Protocol options: protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch
+WrWRwrWrWWrWWWrWWrWrWrWrWrWrWrWrWrWWrWWrW2025-06-04 17:29:33 us=839144 [servidor.local] Inactivity timeout (--ping-restart), restarting
+2025-06-04 17:29:33 us=839308 TCP/UDP: Closing socket
+2025-06-04 17:29:33 us=839351 Closing tun/tap interface
+2025-06-04 17:29:33 us=839364 net_addr_v4_del: 10.8.0.2 dev tun0
+2025-06-04 17:29:33 us=845890 SIGUSR1[soft,ping-restart] received, process restarting
+2025-06-04 17:29:33 us=845914 Restart pause, 2 second(s)
+2025-06-04 17:29:35 us=846046 Re-using SSL/TLS context
+2025-06-04 17:29:35 us=846157 Control Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1250 tun_max_mtu:0 headroom:126 payload:1600 tailroom:126 ET:0 ]
+2025-06-04 17:29:35 us=846170 Data Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:29:35 us=846204 TCP/UDP: Preserving recently used remote address: [AF_INET]172.233.108.45:1194
+2025-06-04 17:29:35 us=846228 Socket Buffers: R=[212992->212992] S=[212992->212992]
+2025-06-04 17:29:35 us=846237 UDPv4 link local: (not bound)
+2025-06-04 17:29:35 us=846244 UDPv4 link remote: [AF_INET]172.233.108.45:1194
+WR2025-06-04 17:29:35 us=847313 TLS: Initial packet from [AF_INET]172.233.108.45:1194, sid=d2d7801d cad8bb8f
+WWRRWRWRWR2025-06-04 17:29:35 us=854327 VERIFY OK: depth=1, C=ES, ST=Asturias, L=Oviedo, O=MiCA, CN=MiCA Root
+2025-06-04 17:29:35 us=854467 VERIFY KU OK
+2025-06-04 17:29:35 us=854475 Validating certificate extended key usage
+2025-06-04 17:29:35 us=854480 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+2025-06-04 17:29:35 us=854485 VERIFY EKU OK
+2025-06-04 17:29:35 us=854490 VERIFY OK: depth=0, C=ES, ST=Asturias, L=Oviedo, O=MiEmpresa, CN=servidor.local
+WRWWWWRRRRWR2025-06-04 17:29:35 us=861476 Control Channel: TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384, peer certificate: 4096 bits RSA, signature: RSA-SHA256, peer signing digest/type: rsa_pss_rsae_sha256 RSASSA-PSS, key agreement: X25519MLKEM768
+2025-06-04 17:29:35 us=861496 [servidor.local] Peer Connection Initiated with [AF_INET]172.233.108.45:1194
+2025-06-04 17:29:35 us=861504 TLS: move_session: dest=TM_ACTIVE src=TM_INITIAL reinit_src=1
+2025-06-04 17:29:35 us=861532 TLS: tls_multi_process: initial untrusted session promoted to trusted
+WR2025-06-04 17:29:35 us=862401 PUSH: Received control message: 'PUSH_REPLY,route-gateway 10.8.0.1,topology subnet,ping 10,ping-restart 120,ifconfig 10.8.0.2 255.255.255.0,peer-id 0,cipher AES-256-GCM,protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch,tun-mtu 1500'
+2025-06-04 17:29:35 us=862447 OPTIONS IMPORT: --ifconfig/up options modified
+2025-06-04 17:29:35 us=862453 OPTIONS IMPORT: route-related options modified
+2025-06-04 17:29:35 us=862458 OPTIONS IMPORT: tun-mtu set to 1500
+2025-06-04 17:29:35 us=862725 TUN/TAP device tun0 opened
+2025-06-04 17:29:35 us=862736 tun/tap device [tun0] opened
+2025-06-04 17:29:35 us=862741 do_ifconfig, ipv4=1, ipv6=0
+2025-06-04 17:29:35 us=862760 net_iface_mtu_set: mtu 1500 for tun0
+2025-06-04 17:29:35 us=862795 net_iface_up: set tun0 up
+2025-06-04 17:29:35 us=863019 net_addr_v4_add: 10.8.0.2/24 dev tun0
+2025-06-04 17:29:35 us=863095 Data Channel MTU parms [ mss_fix:1400 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:29:35 us=863123 Outgoing dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:29:35 us=863133 Outgoing dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:29:35 us=863139 Incoming dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:29:35 us=863147 Incoming dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:29:35 us=863174 Outgoing Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863187 Incoming Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863201 Incoming Epoch Data key 2: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863215 Incoming Epoch Data key 3: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863229 Incoming Epoch Data key 4: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863243 Incoming Epoch Data key 5: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863256 Incoming Epoch Data key 6: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863270 Incoming Epoch Data key 7: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863284 Incoming Epoch Data key 8: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863297 Incoming Epoch Data key 9: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863311 Incoming Epoch Data key 10: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863325 Incoming Epoch Data key 11: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863338 Incoming Epoch Data key 12: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863352 Incoming Epoch Data key 13: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863365 Incoming Epoch Data key 14: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863379 Incoming Epoch Data key 15: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863394 Incoming Epoch Data key 16: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863407 Incoming Epoch Data key 17: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:29:35 us=863414 Initialization Sequence Completed
+2025-06-04 17:29:35 us=863420 Data Channel: cipher 'AES-256-GCM', peer-id: 0
+2025-06-04 17:29:35 us=863425 Timers: ping 10, ping-restart 120
+2025-06-04 17:29:35 us=863430 Protocol options: protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch
+WrWrWRrWRWrWRRWRWRWrWRWRW 10.8.0.2/24 dev tun1
+2025-06-04 17:27:41 us=188496 Data Channel MTU parms [ mss_fix:1400 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:27:41 us=188523 Outgoing dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:27:41 us=188533 Outgoing dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:27:41 us=188539 Incoming dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:27:41 us=188547 Incoming dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:27:41 us=188574 Outgoing Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188587 Incoming Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188602 Incoming Epoch Data key 2: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188616 Incoming Epoch Data key 3: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188629 Incoming Epoch Data key 4: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188643 Incoming Epoch Data key 5: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188657 Incoming Epoch Data key 6: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188670 Incoming Epoch Data key 7: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188684 Incoming Epoch Data key 8: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188698 Incoming Epoch Data key 9: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188711 Incoming Epoch Data key 10: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188725 Incoming Epoch Data key 11: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188739 Incoming Epoch Data key 12: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188752 Incoming Epoch Data key 13: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188766 Incoming Epoch Data key 14: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188780 Incoming Epoch Data key 15: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188793 Incoming Epoch Data key 16: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188807 Incoming Epoch Data key 17: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:27:41 us=188838 Initialization Sequence Completed
+2025-06-04 17:27:41 us=188845 Data Channel: cipher 'AES-256-GCM', peer-id: 1
+2025-06-04 17:27:41 us=188850 Timers: ping 10, ping-restart 120
+2025-06-04 17:27:41 us=188854 Protocol options: protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch
+WrWrWRwrWRWrWRRWRwWRWRrWRWWRWRRWRwWWrWWrWrWrWrWrWrWWWWWWWW2025-06-04 17:31:34 us=428670 [servidor.local] Inactivity timeout (--ping-restart), restarting
+2025-06-04 17:31:34 us=428890 TCP/UDP: Closing socket
+2025-06-04 17:31:34 us=428935 Closing tun/tap interface
+2025-06-04 17:31:34 us=428945 net_addr_v4_del: 10.8.0.2 dev tun1
+2025-06-04 17:31:34 us=434895 SIGUSR1[soft,ping-restart] received, process restarting
+2025-06-04 17:31:34 us=434919 Restart pause, 2 second(s)
+2025-06-04 17:31:36 us=435032 Re-using SSL/TLS context
+2025-06-04 17:31:36 us=435148 Control Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1250 tun_max_mtu:0 headroom:126 payload:1600 tailroom:126 ET:0 ]
+2025-06-04 17:31:36 us=435176 Data Channel MTU parms [ mss_fix:0 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:31:36 us=435208 TCP/UDP: Preserving recently used remote address: [AF_INET]172.233.108.45:1194
+2025-06-04 17:31:36 us=435236 Socket Buffers: R=[212992->212992] S=[212992->212992]
+2025-06-04 17:31:36 us=435245 UDPv4 link local: (not bound)
+2025-06-04 17:31:36 us=435250 UDPv4 link remote: [AF_INET]172.233.108.45:1194
+WR2025-06-04 17:31:36 us=435878 TLS: Initial packet from [AF_INET]172.233.108.45:1194, sid=6bc3ece4 5b1d0f1d
+WWRRWRWRWR2025-06-04 17:31:36 us=442838 VERIFY OK: depth=1, C=ES, ST=Asturias, L=Oviedo, O=MiCA, CN=MiCA Root
+2025-06-04 17:31:36 us=442979 VERIFY KU OK
+2025-06-04 17:31:36 us=442987 Validating certificate extended key usage
+2025-06-04 17:31:36 us=442992 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+2025-06-04 17:31:36 us=442997 VERIFY EKU OK
+2025-06-04 17:31:36 us=443002 VERIFY OK: depth=0, C=ES, ST=Asturias, L=Oviedo, O=MiEmpresa, CN=servidor.local
+WRWWWWRRRRWR2025-06-04 17:31:36 us=449749 Control Channel: TLSv1.3, cipher TLSv1.3 TLS_AES_256_GCM_SHA384, peer certificate: 4096 bits RSA, signature: RSA-SHA256, peer signing digest/type: rsa_pss_rsae_sha256 RSASSA-PSS, key agreement: X25519MLKEM768
+2025-06-04 17:31:36 us=449770 [servidor.local] Peer Connection Initiated with [AF_INET]172.233.108.45:1194
+2025-06-04 17:31:36 us=449779 TLS: move_session: dest=TM_ACTIVE src=TM_INITIAL reinit_src=1
+2025-06-04 17:31:36 us=449837 TLS: tls_multi_process: initial untrusted session promoted to trusted
+WR2025-06-04 17:31:36 us=451344 PUSH: Received control message: 'PUSH_REPLY,route-gateway 10.8.0.1,topology subnet,ping 10,ping-restart 120,ifconfig 10.8.0.2 255.255.255.0,peer-id 1,cipher AES-256-GCM,protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch,tun-mtu 1500'
+2025-06-04 17:31:36 us=451392 OPTIONS IMPORT: --ifconfig/up options modified
+2025-06-04 17:31:36 us=451398 OPTIONS IMPORT: route-related options modified
+2025-06-04 17:31:36 us=451402 OPTIONS IMPORT: tun-mtu set to 1500
+2025-06-04 17:31:36 us=451689 TUN/TAP device tun0 opened
+2025-06-04 17:31:36 us=451703 tun/tap device [tun0] opened
+2025-06-04 17:31:36 us=451711 do_ifconfig, ipv4=1, ipv6=0
+2025-06-04 17:31:36 us=452258 net_iface_mtu_set: mtu 1500 for tun0
+2025-06-04 17:31:36 us=452307 net_iface_up: set tun0 up
+2025-06-04 17:31:36 us=452399 net_addr_v4_add: 10.8.0.2/24 dev tun0
+2025-06-04 17:31:36 us=452476 Data Channel MTU parms [ mss_fix:1400 max_frag:0 tun_mtu:1500 tun_max_mtu:1600 headroom:136 payload:1768 tailroom:562 ET:0 ]
+2025-06-04 17:31:36 us=452505 Outgoing dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:31:36 us=452515 Outgoing dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:31:36 us=452521 Incoming dynamic tls-crypt: Cipher 'AES-256-CTR' initialized with 256 bit key
+2025-06-04 17:31:36 us=452529 Incoming dynamic tls-crypt: Using 256 bit message hash 'SHA256' for HMAC authentication
+2025-06-04 17:31:36 us=452556 Outgoing Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452569 Incoming Epoch Data key 1: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452583 Incoming Epoch Data key 2: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452598 Incoming Epoch Data key 3: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452611 Incoming Epoch Data key 4: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452625 Incoming Epoch Data key 5: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452639 Incoming Epoch Data key 6: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452653 Incoming Epoch Data key 7: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452666 Incoming Epoch Data key 8: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452686 Incoming Epoch Data key 9: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452700 Incoming Epoch Data key 10: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452714 Incoming Epoch Data key 11: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452727 Incoming Epoch Data key 12: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452741 Incoming Epoch Data key 13: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452755 Incoming Epoch Data key 14: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452768 Incoming Epoch Data key 15: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452782 Incoming Epoch Data key 16: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452795 Incoming Epoch Data key 17: Cipher 'AES-256-GCM' initialized with 256 bit key
+2025-06-04 17:31:36 us=452803 Initialization Sequence Completed
+2025-06-04 17:31:36 us=452825 Data Channel: cipher 'AES-256-GCM', peer-id: 1
+2025-06-04 17:31:36 us=452834 Timers: ping 10, ping-restart 120
+2025-06-04 17:31:36 us=452839 Protocol options: protocol-flags cc-exit tls-ekm dyn-tls-crypt aead-epoch
+WrWrWRwrWRWrWRWRWRWRrWRW2025-06-04 17:32:57 us=146675 event_wait : Interrupted system call (fd=-1,code=4)
+2025-06-04 17:32:57 us=146954 TCP/UDP: Closing socket
+2025-06-04 17:32:57 us=146993 Closing tun/tap interface
+2025-06-04 17:32:57 us=147007 net_addr_v4_del: 10.8.0.2 dev tun0
+2025-06-04 17:32:57 us=152981 SIGTERM[hard,] received, process exiting

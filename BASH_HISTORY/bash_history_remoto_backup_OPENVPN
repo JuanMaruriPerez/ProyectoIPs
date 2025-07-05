@@ -1,0 +1,284 @@
+apt-get update
+apt-get upgrade
+ls 
+ls -l
+cd /home
+ls -l
+cd ..
+pqd
+pwd
+ls -l
+cd ~ 
+ls -l
+pqd
+pwd
+sudo apt install build-essential checkinstall zlib1g-dev -y
+cd /usr
+ls -l
+cd local
+ls -l
+cd src
+ls -l
+wget https://www.openssl.org/source/openssl-3.5.0.tar.gz
+ls -l
+tar -xzvf openssl-3.5.0.tar.gz
+ls -l
+sudo ./config --prefix=/usr/local/openssl-3.5 --openssldir=/usr/local/openssl-3.5 no-shared
+cd openssl-3.5.0/
+sudo ./config --prefix=/usr/local/openssl-3.5 --openssldir=/usr/local/openssl-3.5 no-shared
+make
+sudo nano /etc/profile.d/openssl-3.5.sh
+openssl
+openssl -v
+openssl --version
+sudo nano /etc/profile.d/openssl-3.5.sh
+source /etc/profile.d/openssl-3.5.sh
+openssl
+openssl help
+openssl version
+echo $PATH
+echo $LD_LIBRARY_PATH
+openssl version
+which openssl
+clear
+openssl version
+source /etc/profile.d/openssl-3.5.sh
+echo $PATH
+which openssl
+openssl version
+ls -l /usr/local/openssl-3.5/bin/openssl
+cd /usr/local/src/openssl-3.5.0/
+ls -l
+cd ..
+ls -l
+cd ..
+ls -l
+cd bin/
+ls -l
+cd ..
+cd src
+ls -l
+cd openssl-3.5.0/
+ls -l
+sudo ./config --prefix=/usr/local/openssl-3.5 --openssldir=/usr/local/openssl-3.5 no-shared
+make
+sudo make install
+ls -l
+cd /rott
+cd /root
+ls -l
+cd /
+ls -l
+cd b
+cd bin
+ls -l
+cd ..
+ls -l
+cd /home
+ls -l
+pqd
+pwd
+cd ~ 
+ls -l
+pwd
+cd /usr
+l sl-
+ls -l
+cd bin
+ls -l
+cd ..
+ls -l
+cd local
+ls -l
+cd bin/
+ls -l
+cd openssl
+cd openssl-3.5
+ls -l
+cd ..
+cd openssl-3.5/
+l s-l
+ls -l
+ls -l /usr/local/openssl-3.5/bin/openssl
+export PATH=/usr/local/openssl-3.5/bin:$PATH
+hash -r
+export PATH=/usr/local/openssl-3.5/bin:$PATH
+hash -r
+which openssl
+openssl version
+cd /usr/local/src/
+ls -l
+git clone https://github.com/open-quantum-safe/oqs-provider.git
+ls -l
+rm openssl-3.5.0.tar.gz 
+cd oqs-provider/
+OPENSSL_BRANCH=3.5.0
+echo OPENSSL_BRANCH
+echo $OPENSSL_BRANCH
+ls -l
+cd scripts/
+ls -l
+./fllbuild.sh
+./fullbuild.sh
+cat fullbuild.sh 
+./fullbuild.sh
+cmake
+sudo apt update
+sudo apt install cmake
+./fullbuild.sh
+sudo apt update
+sudo apt install build-essential ninja-build
+./fullbuild.sh
+export OPENSSL_ROOT_DIR=/usr/local/openssl-3.5
+export OPENSSL_INCLUDE_DIR=/usr/local/openssl-3.5/include
+export OPENSSL_LIBRARIES=/usr/local/openssl-3.5/lib
+export OPENSSL_BRANCH=3.5.0
+./fullbuild.sh
+export OPENSSL_BRANCH=3.5
+./fullbuild.sh
+cd ..
+cmake --install _build
+ls -l
+cat README.md 
+cd ..
+ls -l
+cd ..
+ls -l
+cd ..
+ls -l
+cd oqs-provider/
+ls -l
+cmake --install _build
+cd ..
+ls -l
+cd openssl-3.5/
+cd ..
+cd /usr/local/src/liboqs/build
+ls -l
+cd ..
+ls -l
+cd build/
+ls -l
+cd src/
+ls -l
+cd ..
+l s-l
+ls -l
+sudo make install
+cmake install
+make install
+ninja install
+cd ..
+l s-l
+cd ..
+ls -l
+cd src
+ls -l
+cd liboqs/build/
+ninja install
+cd ..
+ls -l
+cd ..
+ls -l
+cd oqs-provider/
+ls -l
+cat README.md 
+cd /usr/local
+cd include/oqs
+ls -l
+cd ..
+cd ../lib
+ls -l
+export liboqs_DIR=/usr/local
+export OPENSSL_INSTALL=/usr/local/openssl-3.5
+cd ..
+ls- l
+ls -l
+cd src
+ls -l
+cd oqs-provider/
+ls -l
+export MAKE_PARAMS="-j$(nproc)"
+export OQSPROV_CMAKE_PARAMS="-DOPENSSL_USE_STATIC_LIBS=ON"
+./scripts/fullbuild.sh
+ls -l
+cd ..
+ls -l
+cd src/oqs-provider/
+sudo ninja install
+ls -l
+cmake install
+ls -l
+cd _build/
+ninja install
+cmake -G Ninja ..
+make
+sudo make install
+openssl list -providers
+/usr/local/src/oqs-provider/openssl-oqs.cnf
+nano /usr/local/src/oqs-provider/openssl-oqs.cnf
+ls usr/local/openssl-3.5/lib64/ossl-modules/
+ls usr/local/openssl-3.5/lib64/ossl-modules
+ls usr/local/openssl-3.5/
+ls /usr/local/openssl-3.5/lib64/ossl-modules/
+OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf openssl list -providers
+export OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf
+source ~/.bashrc   # o el archivo que uses
+clear
+openssl list -providers
+alias openssl='OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf openssl'
+openssl list -providers
+echo "alias openssl='OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf openssl'" >> ~/.bashrc
+source ~/.bashrc
+openssl list -providers
+cd ~/
+ls -la
+nano .bash_history
+openssl list -providers
+echo "HASTA AQUI"
+sudo apt update
+sudo apt install -y build-essential pkg-config libssl-dev liblzo2-dev libpam0g-dev
+cd /usr/local/src
+wget https://swupdate.openvpn.org/community/releases/openvpn-2.7_alpha1.tar.gz
+ls -l
+tar -xzvf openvpn-2.7_alpha1.tar.gz
+ls -l
+rm openvpn-2.7_alpha1.tar.gz 
+ls -l
+cd openvpn-2.7_alpha1/
+ls -l
+cat README
+nano install-sh 
+nano INSTALL 
+clear
+cat INSTALL 
+find / -name "openssl-oqs.cnf"
+echo $OPENSSL_CONF
+export OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf
+echo $OPENSSL_CONF
+./configure OPENSSL_CFLAGS="-I/usr/local/openssl-3.5/include" OPENSSL_LIBS="-L/usr/local/openssl-3.5/lib -lssl -lcrypto"
+make -j$(nproc)
+sudo make install
+sudo apt update
+sudo apt install libnl-3-dev libnl-genl-3-dev pkg-config
+cd /usr/local/src/openvpn-2.7_alpha1
+./configure OPENSSL_CFLAGS="-I/usr/local/openssl-3.5/include" OPENSSL_LIBS="-L/usr/local/openssl-3.5/lib -lssl -lcrypto"
+make -j$(nproc)
+sudo make install
+sudo apt install libpkcs11-helper1-dev libcap-ng-dev pkg-config
+./configure
+make -j$(nproc)
+sudo make install
+./configure
+make -j$(nproc)
+sudo make install
+sudo apt-get install liblz4-dev
+./configure
+make -j$(nproc)
+sudo make install
+find / -name "openssl-oqs.cnf"
+openvpn --config  /usr/local/src/oqs-provider/openssl-oqs.cnf
+openvpn --version
+cd ~/
+ls -la
+nano .bash_history

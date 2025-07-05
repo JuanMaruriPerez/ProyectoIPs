@@ -1,0 +1,198 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+
+#include <openssl/evp.h>
+#include <openssl/pem.h>
+#include <openssl/bio.h>
+#include <openssl/buffer.h>
+
+#include <openssl/provider.h>
+
+#define SERVER_IP "172.233.108.45"
+#define PORT 8080
+#define BUFSIZE 4096
+
+// funcion que carga el provider con fucnionalidad quantica
+OSSL_PROVIDER *load_oqs_provider(void) {
+    OSSL_PROVIDER *prov = OSSL_PROVIDER_load(NULL, "oqsprovider");
+    if (!prov) {
+        fprintf(stderr, "Error cargando el provider oqsprovider\n");
+        return NULL;
+    }
+    return prov;
+}
+
+EVP_PKEY_CTX *create_kem_ctx(void) {
+    EVP_PKEY_CTX *ctx = EVP_PKEY_CTX_new_from_name(NULL, "X25519MLKEM768", NULL);
+    if (!ctx) {
+        fprintf(stderr, "Error creando contexto EVP_PKEY_CTX para X25519_MLKEM768\n");
+        return NULL;
+    }
+    return ctx;
+}
+
+// Función para extraer la parte pública clásica (X25519) y post-cuántica (MLKEM512) en formato PEM o base64
+void extract_public_parts(EVP_PKEY *pkey, char **classical_out, char **pq_out) {
+    // Crear un BIO para exportar la clave pública en formato PEM
+    BIO *bio = BIO_new(BIO_s_mem());
+    PEM_write_bio_PUBKEY(bio, pkey);
+
+    BUF_MEM *bptr;
+    BIO_get_mem_ptr(bio, &bptr);
+
+    // Copiamos el PEM en un string temporal
+    char *pem_data = malloc(bptr->length + 1);
+    memcpy(pem_data, bptr->data, bptr->length);
+    pem_data[bptr->length] = '\0';
+
+    // Opcional: puedes parsear PEM si quieres separar partes, o enviar todo como una sola cadena.
+    *classical_out = strdup(pem_data);  // Por ahora usamos lo mismo para ambas
+    *pq_out = strdup(pem_data);         // En versión real separarías
+
+    BIO_free(bio);
+    free(pem_data);
+}
+
+// Generación de clave híbrida y exportación de claves públicas
+EVP_PKEY *generate_hybrid_keypair(char **classical_pub, char **pq_pub) {
+    EVP_PKEY_CTX *ctx = NULL;
+    EVP_PKEY *pkey = NULL; 
+    ctx = EVP_PKEY_CTX_new_from_name(NULL, "X25519MLKEM768", NULL);
+    if (!ctx) {
+        fprintf(stderr, "Error creando contexto\n");
+        return NULL;
+    }
+
+    if (EVP_PKEY_keygen_init(ctx) <= 0) {
+        fprintf(stderr, "Error inicializando generación de clave\n");
+        EVP_PKEY_CTX_free(ctx);
+        return NULL;
+    }
+
+    if (EVP_PKEY_keygen(ctx, &pkey) <= 0) {
+        fprintf(stderr, "Error generando clave\n");
+        EVP_PKEY_CTX_free(ctx);
+        return NULL;
+    }
+
+    // Guardar clave privada
+    FILE *priv = fopen("client_key.pem", "w");
+    PEM_write_PrivateKey(priv, pkey, NULL, NULL, 0, NULL, NULL);
+    fclose(priv);
+
+    // Guardar clave pública
+    FILE *pub = fopen("client_pub.pem", "w");
+    PEM_write_PUBKEY(pub, pkey);
+    fclose(pub);
+
+
+    // Imprimir clave privada PEM en pantalla
+    BIO *bio_priv = BIO_new(BIO_s_mem());
+    if (!bio_priv) {
+        fprintf(stderr, "Error creando BIO para clave privada\n");
+    } else {
+        if (PEM_write_bio_PrivateKey(bio_priv, pkey, NULL, NULL, 0, NULL, NULL)) {
+            BUF_MEM *bptr;
+            BIO_get_mem_ptr(bio_priv, &bptr);
+            printf("Clave Privada PEM:\n%.*s\n", (int)bptr->length, bptr->data);
+        }
+        BIO_free(bio_priv);
+    }
+
+    // Imprimir clave pública PEM en pantalla
+    BIO *bio_pub = BIO_new(BIO_s_mem());
+    if (!bio_pub) {
+        fprintf(stderr, "Error creando BIO para clave pública\n");
+    } else {
+        if (PEM_write_bio_PUBKEY(bio_pub, pkey)) {
+            BUF_MEM *bptr;
+            BIO_get_mem_ptr(bio_pub, &bptr);
+            printf("Clave Pública PEM:\n%.*s\n", (int)bptr->length, bptr->data);
+        }
+        BIO_free(bio_pub);
+    }
+
+
+
+
+
+
+    // Extraer claves públicas
+    extract_public_parts(pkey, classical_pub, pq_pub);
+
+    EVP_PKEY_CTX_free(ctx);
+    return pkey;
+}
+
+int main() {
+    int sockfd;
+    char buffer[BUFSIZE];
+    struct sockaddr_in servaddr;
+    socklen_t len = sizeof(servaddr);
+
+    OSSL_PROVIDER *oqs_prov = load_oqs_provider();
+
+    char *classical_pub = NULL;
+    char *pq_pub = NULL;
+
+    EVP_PKEY_CTX *ctx = create_kem_ctx();
+    if (!ctx) {
+        OSSL_PROVIDER_unload(oqs_prov);
+        return 1; // Error creando contexto
+    }
+
+    printf("Provider OQS cargado y contexto creado correctamente.\n");
+
+
+    EVP_PKEY *pkey = generate_hybrid_keypair(&classical_pub, &pq_pub);
+    if (!pkey) {
+        fprintf(stderr, "Fallo al generar claves híbridas\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Crear socket UDP
+    if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        perror("socket creation failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Inicializar datos del servidor
+    memset(&servaddr, 0, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_port = htons(PORT);
+    servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
+
+    // Crear mensaje HELLO_SERVER
+    const char *client_id = "client01";
+    const char *cipher_suites = "AES-256-GCM:AES-128-GCM:CHACHA20-POLY1305";
+
+    char msg[BUFSIZE];
+    snprintf(msg, BUFSIZE, "HELLO_SERVER|%s|%s|%s|%s",
+             client_id,
+             cipher_suites,
+             classical_pub,
+             pq_pub);
+
+    printf("Mensaje HELLO_SERVER enviado:\n%s\n", msg);
+    sendto(sockfd, msg, strlen(msg), 0, (const struct sockaddr *)&servaddr, sizeof(servaddr));
+
+    // Esperar respuesta
+    int n = recvfrom(sockfd, buffer, BUFSIZE - 1, 0, (struct sockaddr *)&servaddr, &len);
+    if (n > 0) {
+        buffer[n] = '\0';
+        printf("Respuesta del servidor: %s\n", buffer);
+    }
+
+    // Limpieza
+    EVP_PKEY_CTX_free(ctx);
+    OSSL_PROVIDER_unload(oqs_prov);
+    close(sockfd);
+    EVP_PKEY_free(pkey);
+    free(classical_pub);
+    free(pq_pub);
+
+    return 0;
+}

@@ -1,0 +1,102 @@
+#include "handshake_client.h"
+#include "crypto_utils.h"
+
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <arpa/inet.h>
+#include <openssl/rand.h>
+#include <openssl/x509.h>
+#include <openssl/x509_vfy.h>
+#include <openssl/pem.h>
+
+#define CA_CERT_PATH "certs/ca.cert.pem"
+
+// Conecta al servidor con la IP y puerto dados
+int connect_to_server(const char *ip, uint16_t port) {
+    int sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) {
+        perror("❌ Error creando socket");
+        return -1;
+    }
+
+    struct sockaddr_in server_addr = {
+        .sin_family = AF_INET,
+        .sin_port = htons(port),
+        .sin_addr.s_addr = inet_addr(ip),
+    };
+
+    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+        perror("❌ Error conectando al servidor");
+        close(sock);
+        return -1;
+    }
+
+    printf("✅ Conectado al servidor en %s:%d\n", ip, port);
+    return sock;
+}
+
+// Genera las claves híbridas del cliente
+int generate_client_keys(EVP_PKEY **kem_key, EVP_PKEY **ecdh_key) {
+    *kem_key = generate_kem_key("MLKEM768");
+    if (!*kem_key) {
+        fprintf(stderr, "❌ Error generando clave KEM cliente\n");
+        return 0;
+    }
+
+    *ecdh_key = generate_ecdh_key("X25519");
+    if (!*ecdh_key) {
+        fprintf(stderr, "❌ Error generando clave ECDH cliente\n");
+        EVP_PKEY_free(*kem_key);
+        return 0;
+    }
+
+    return 1;
+}
+
+// Construye y envía el ClientHello con las claves públicas
+int send_client_hello(int sock, EVP_PKEY *kem_key, EVP_PKEY *ecdh_key) {
+    client_hello_t ch = {0};
+    strcpy(ch.kem_name, "MLKEM768");
+    strcpy(ch.ecdh_name, "X25519");
+    strcpy(ch.hash_name, "SHA256");
+    RAND_bytes(ch.client_random, RANDOM_SIZE);
+
+    size_t kem_len = KEM_PUB_KEY_SIZE;
+    size_t ecdh_len = ECDH_PUB_KEY_SIZE;
+
+    if (!serialize_pubkey(kem_key, ch.kem_pubkey, &kem_len) ||
+        !serialize_pubkey(ecdh_key, ch.ecdh_pubkey, &ecdh_len)) {
+        fprintf(stderr, "❌ Error serializando claves públicas\n");
+        return 0;
+    }
+
+    if (write(sock, &ch, sizeof(ch)) != sizeof(ch)) {
+        perror("❌ Error enviando ClientHello");
+        return 0;
+    }
+
+    printf("➡️ Enviado ClientHello\n");
+    return 1;
+}
+
+// Recibe el ServerHello
+int receive_server_hello(int sock, server_hello_t *sh) {
+    ssize_t r = read(sock, sh, sizeof(*sh));
+    if (r != sizeof(*sh)) {
+        perror("❌ Error leyendo ServerHello");
+        return 0;
+    }
+
+    printf("⬅️ Recibido ServerHello\n");
+    printf("++++ Kem Name: %s\n", sh->selected_kem);
+    printf("++++ ECDH Name: %s\n", sh->selected_ecdh);
+    printf("++++ Hash Name: %s\n", sh->selected_hash);
+    print_hex("++++ Server Random", sh->server_random, RANDOM_SIZE);
+    print_hex("++++ Kempub", sh->kem_pubkey, KEM_PUB_KEY_SIZE);
+    print_hex("++++ ECDHpub", sh->ecdh_pubkey, ECDH_PUB_KEY_SIZE);
+    print_hex("++++ Ciphertext", sh->ciphertext, CIPHERTEXT_LEN);
+
+    return 1;
+}
+

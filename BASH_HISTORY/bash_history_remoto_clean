@@ -1,0 +1,133 @@
+# Actualiza y prepara el sistema
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y build-essential checkinstall zlib1g-dev cmake ninja-build git wget
+
+# Navega a la carpeta donde instalaremos OpenSSL
+cd /usr/local/src
+
+# Descarga OpenSSL 3.5.0
+wget https://www.openssl.org/source/openssl-3.5.0.tar.gz
+
+# Extrae el tarball
+tar -xzvf openssl-3.5.0.tar.gz
+
+# Entra en la carpeta de OpenSSL
+cd openssl-3.5.0/
+
+# Configura la compilación (usar sudo para instalar después)
+sudo ./config --prefix=/usr/local/openssl-3.5 --openssldir=/usr/local/openssl-3.5 no-shared
+
+# Compila OpenSSL
+make
+
+# Instala OpenSSL
+sudo make install
+
+# Configura las variables de entorno para usar esta OpenSSL
+export PATH=/usr/local/openssl-3.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/openssl-3.5/lib:$LD_LIBRARY_PATH
+export OPENSSL_ROOT_DIR=/usr/local/openssl-3.5
+nano /etc/profile.d/openssl-3.5.sh
+"
+export PATH="/usr/local/openssl-3.5/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/openssl-3.5/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/usr/local/openssl-3.5/lib/pkgconfig:$PKG_CONFIG_PATH"
+export OPENSSL_ROOT_DIR"=/usr/local/openssl-3.5"
+"
+source /etc/profile.d/openssl-3.5.sh
+
+# Verifica que openssl es el nuevo
+which openssl
+openssl version
+
+
+
+# Clonar e instalar liboqs
+cd /usr/local/src
+git clone https://github.com/open-quantum-safe/liboqs.git
+cd liboqs
+mkdir build && cd build
+
+
+cmake -GNinja \
+  -DCMAKE_INSTALL_PREFIX=/usr/local \
+  -DOPENSSL_ROOT_DIR=/usr/local/openssl-3.5 \
+  -DOPENSSL_INCLUDE_DIR=/usr/local/openssl-3.5/include \
+  -DOPENSSL_CRYPTO_LIBRARY=/usr/local/openssl-3.5/lib64/libcrypto.a \
+  -DOPENSSL_SSL_LIBRARY=/usr/local/openssl-3.5/lib64/libssl.a \
+  ..
+
+
+
+ninja
+sudo ninja install
+
+
+
+# Clona el repositorio OQS Provider
+cd /usr/local/src
+git clone https://github.com/open-quantum-safe/oqs-provider.git
+
+# Entra en el directorio oqs-provider
+cd oqs-provider
+
+# Configura variables para compilación
+export OPENSSL_ROOT_DIR=/usr/local/openssl-3.5
+export OPENSSL_INCLUDE_DIR=/usr/local/openssl-3.5/include
+export OPENSSL_LIBRARIES=/usr/local/openssl-3.5/lib
+export OPENSSL_BRANCH=3.5
+export liboqs_DIR=/usr/local
+export OPENSSL_INSTALL=/usr/local/openssl-3.5
+
+# Ejecuta el script fullbuild.sh (elimina errores de tipografía)
+./scripts/fullbuild.sh
+
+# Instala oqs-provider
+cd _build
+make
+sudo make install
+
+# Configura entorno
+nano /usr/local/src/oqs-provider/openssl-oqs.cnf
+"
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+alg_section = algorithm_sect
+
+[provider_sect]
+default = default_sect
+oqsprovider = oqsprovider_sect
+
+[default_sect]
+activate = 1
+
+[oqsprovider_sect]
+module = /usr/local/openssl-3.5/lib64/ossl-modules/oqsprovider.so
+activate = 1
+
+[algorithm_sect]
+# Puedes definir aquí políticas de seguridad, por ejemplo:
+# default_properties = fips=no
+"
+
+
+
+# Verifica proveedores instalados con configuración oqs
+OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf /usr/local/openssl-3.5/bin/openssl list -providers
+
+# Añade alias para usar siempre el proveedor OQS
+echo "export OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf" >> ~/.bashrc
+echo "alias openssl='/usr/local/openssl-3.5/bin/openssl'" >> ~/.bashrc
+
+# Recarga .bashrc para activar alias
+source ~/.bashrc
+
+# Prueba final
+openssl list -providers
+
+
+
+

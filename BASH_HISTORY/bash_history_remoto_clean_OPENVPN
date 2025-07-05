@@ -1,0 +1,21 @@
+sudo apt update
+sudo apt install -y build-essential pkg-config libssl-dev liblzo2-dev libpam0g-dev
+cd /usr/local/src
+wget https://swupdate.openvpn.org/community/releases/openvpn-2.7_alpha1.tar.gz
+tar -xzvf openvpn-2.7_alpha1.tar.gz
+rm openvpn-2.7_alpha1.tar.gz 
+cd openvpn-2.7_alpha1/
+find / -name "openssl-oqs.cnf"
+export OPENSSL_CONF=/usr/local/src/oqs-provider/openssl-oqs.cnf
+sudo apt update
+sudo apt install libnl-3-dev libnl-genl-3-dev pkg-config
+./configure OPENSSL_CFLAGS="-I/usr/local/openssl-3.5/include" OPENSSL_LIBS="-L/usr/local/openssl-3.5/lib64 -lssl -lcrypto"
+sudo apt install libpkcs11-helper1-dev libcap-ng-dev pkg-config
+sudo apt-get install liblz4-dev
+./configure
+make -j$(nproc)
+sudo make install
+find / -name "openssl-oqs.cnf"
+openvpn --config  /usr/local/src/oqs-provider/openssl-oqs.cnf
+openvpn --version
+
